@@ -23,7 +23,7 @@ const JobDetails = () => {
 
     }
     return (
-        <div className="max-w-6xl mx-auto ">
+        <div className="max-w-6xl mx-auto min-h-screen px-2 md:px-0">
             <FadeIn delay={.4} direction='up'>
                 <div className="grid md:grid-cols-4 gap-4 my-12 ">
 
@@ -48,12 +48,12 @@ const JobDetails = () => {
                     <div className="">
 
 
-                        <div className="bg-gray-200 rounded  p-2 mb-5">
+                        <div className="bg-gray-200 rounded  p-3 mb-5">
 
                             <h3 className="mb-3 font-bold ">Job Details</h3>
 
                             <div className="mb-5">
-                                <div className="flex">
+                                <div className="flex mb-2">
                                     <img src={money} className="w-30 h-full object-contain me-2" alt="" />
                                     <p><span className="font-bold me-1">Salary:</span>{job.salary} (Per Month)</p>
                                 </div>

@@ -13,7 +13,7 @@ const FeaturedJob = () => {
             .then(data => setJob(data))
     }, [])
     return (
-        <div className="max-w-6xl mx-auto ">
+        <div className="max-w-6xl mx-auto px-2 md:px-0 " id="featured">
             <FadeIn delay={0.4} direction='down'>
                 <div className="text-center my-8">
                     <h2 className="text-5xl my-4">Featured Jobs</h2>

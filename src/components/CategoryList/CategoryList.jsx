@@ -11,7 +11,7 @@ const CategoryList = () => {
             .then(data => { setJObList(data) })
     }, [])
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto px-2 md:px-0">
             <div className="text-center my-12 ">
                 <FadeIn delay={.4} direction="up">
                     <div>

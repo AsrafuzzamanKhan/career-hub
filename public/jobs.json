@@ -1,7 +1,7 @@
 [
      {
       "id": 1,
-      "logo": "https://i.ibb.co/vc8Y2bb/google-logo.jpg",
+      "logo": "https://i.ibb.co/chQpTjT/google-logo-removebg-preview.png",
       "job_title": "Technical Database Engineer",
       "company_name": "Google LLC",
       "remote_or_onsite": "Remote",
@@ -39,7 +39,7 @@
       },
       {
         "id": 3,
-        "logo": "https://i.ibb.co/zHnDPLv/tesla-logo-free-download-free-vector.jpg",
+        "logo": "https://i.ibb.co/6gm48CV/tesla-logo-free-download-free-vector-removebg-preview.png",
         "job_title": "Software Engineer",
         "company_name": "Tesla",
         "remote_or_onsite": "Onsite",
@@ -58,7 +58,7 @@
       },
       {
         "id": 4,
-        "logo": "https://i.ibb.co/vc8Y2bb/google-logo.jpg",
+        "logo": "https://i.ibb.co/chQpTjT/google-logo-removebg-preview.png",
         "job_title": "Software Engineer",
         "company_name": "Google LLC",
         "remote_or_onsite": "Onsite",
@@ -77,7 +77,7 @@
       },
       {
         "id": 5,
-        "logo": "https://i.ibb.co/zHnDPLv/tesla-logo-free-download-free-vector.jpg",
+        "logo": "https://i.ibb.co/6gm48CV/tesla-logo-free-download-free-vector-removebg-preview.png",
         "job_title": "Technical Database Engineer",
         "company_name": "Tesla",
         "remote_or_onsite": "Remote",
