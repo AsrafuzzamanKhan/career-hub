@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredJobApplicaton } from "../../utility/localStore";
+import FadeIn from "../../animation/FadeIn";
 
 
 const AppliedJobs = () => {
@@ -41,26 +42,48 @@ const AppliedJobs = () => {
         }
     }, [jobs])
     return (
-        <div>
-            <h1>Jobs i applied {jobs.length}</h1>
-            <h1>Jobs i applied {appliedJobs.length}</h1>
-            <details className="dropdown mb-32">
-                <summary className="m-1 btn">open or close</summary>
-                <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                    <li onClick={() => handleJobsFilter('all')}><a>ALL</a></li>
-                    <li onClick={() => handleJobsFilter('remote')}><a>Remote</a></li>
-                    <li onClick={() => handleJobsFilter('onsite')}><a>Onsite</a></li>
-                </ul>
-            </details>
+        <div className="max-w-6xl mx-auto">
             <div>
-                <ul>
-                    {
-                        displayJobs.map(job => <li key={job.id}><span>
-                            {job.job_title} - {job.job_type} - {job.remote_or_onsite}
-                        </span> <button className="btn btn-primary">Show details</button>
-                        </li>)
-                    }
-                </ul>
+                <details className="dropdown mb-32">
+                    <summary className="m-1 btn ">Filter</summary>
+                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 ">
+                        <li onClick={() => handleJobsFilter('all')}><a>ALL</a></li>
+                        <li onClick={() => handleJobsFilter('remote')}><a>Remote</a></li>
+                        <li onClick={() => handleJobsFilter('onsite')}><a>Onsite</a></li>
+                    </ul>
+                </details>
+
+                {
+                    displayJobs.map(job => <div key={job.id}>
+
+                        <FadeIn delaay={.4} direction="down" >
+
+                            <div className="card card-side bg-base-100 shadow-xl mb-4 w-full">
+                                <figure className="bg-gray-200"><img src={job.logo} alt="Movie" className="w-40" /></figure>
+                                <div className="card-body">
+                                    <h2 className="card-title">   {job.job_title}</h2>
+                                    <p>{job.company_name}</p>
+                                    <div>
+                                        <p>{job.remote_or_onsite}</p>
+                                        <p>{job.job_type}</p>
+                                    </div>
+                                    <div>
+                                        <p>{job.contact_information
+                                            .address}</p>
+                                        <p>{job.salary}</p>
+                                    </div>
+
+                                    <div className="card-actions justify-end">
+                                        <button className="btn btn-primary">Show details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeIn>
+
+
+                    </div>)
+                }
+
             </div>
         </div>
     );
