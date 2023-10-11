@@ -3,7 +3,7 @@ import FadeIn from '../../animation/FadeIn';
 const Banner = () => {
 
     return (
-        <div className="h-[80vh] relative flex flex-col items-center"
+        <div className="h-screen relative flex flex-col items-center"
             style={{
                 background: `url(${banner})`,
                 backgroundPosition: 'bottom',
@@ -13,7 +13,7 @@ const Banner = () => {
 
             <FadeIn delay={0.2} direction='down' padding fullWidth>
 
-                <h1 className='mt-[90px] text-center text-5xl leading-tight xs:text-[64px] text-white max-w-[1050px]'>One Step Closer To Your Dream Job</h1>
+                <h1 className='mt-[90px] text-center text-5xl leading-tight xs:text-[64px] text-white max-w-[1050px]'>One Step Closer To Your <br /> <span className='text-[#9873FF]'> Dream Job</span></h1>
             </FadeIn>
 
             <FadeIn delay={0.4} direction='down' padding fullWidth>

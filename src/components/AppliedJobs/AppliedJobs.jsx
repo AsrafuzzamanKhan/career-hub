@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { getStoredJobApplicaton } from "../../utility/localStore";
+import location from '../../assets/icons/location2.png'
+import money from '../../assets/icons/money.png'
 import FadeIn from "../../animation/FadeIn";
 
 
@@ -43,8 +45,8 @@ const AppliedJobs = () => {
     }, [jobs])
     return (
         <div className="max-w-6xl mx-auto">
-            <div>
-                <details className="dropdown mb-32">
+            <div className="my-6">
+                <details className="dropdown mb-5">
                     <summary className="m-1 btn ">Filter</summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 ">
                         <li onClick={() => handleJobsFilter('all')}><a>ALL</a></li>
@@ -59,23 +61,33 @@ const AppliedJobs = () => {
                         <FadeIn delaay={.4} direction="down" >
 
                             <div className="card card-side bg-base-100 shadow-xl mb-4 w-full">
-                                <figure className="bg-gray-200"><img src={job.logo} alt="Movie" className="w-40" /></figure>
+                                <figure className="bg-gray-200">
+                                    <img src={job.logo} alt="Movie" className="w-40" />
+                                </figure>
                                 <div className="card-body">
-                                    <h2 className="card-title">   {job.job_title}</h2>
+                                    <h2 className="card-title">{job.job_title}</h2>
                                     <p>{job.company_name}</p>
-                                    <div>
-                                        <p>{job.remote_or_onsite}</p>
-                                        <p>{job.job_type}</p>
-                                    </div>
-                                    <div>
-                                        <p>{job.contact_information
-                                            .address}</p>
-                                        <p>{job.salary}</p>
+                                    <div className="card-actions justify-start my-3 ">
+                                        <div className="badge badge-outline px-4 py-4">{job.remote_or_onsite}</div>
+                                        <div className="badge badge-outline px-4 py-4 ">{job.job_type}</div>
                                     </div>
 
-                                    <div className="card-actions justify-end">
-                                        <button className="btn btn-primary">Show details</button>
+                                    <div className="flex">
+                                        <div className="flex me-2">
+                                            <img src={location} alt="" className="me-1" />
+                                            <p>{job.contact_information
+                                                .address}</p>
+
+                                        </div>
+                                        <div className="flex">
+                                            <img src={money} alt="" className="me-1" />
+                                            <p>{job.salary}</p></div>
                                     </div>
+
+
+                                </div>
+                                <div className="card-actions justify-center items-center me-6">
+                                    <Link to={`/jobDetails/${job.id}`} ><button className="btn bg-[linear-gradient(90deg,_#7E90FE_0%,_#9873FF_100%)] font-medium text-white ">Show Details</button></Link>
                                 </div>
                             </div>
                         </FadeIn>

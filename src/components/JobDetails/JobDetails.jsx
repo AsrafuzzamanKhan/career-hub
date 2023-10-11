@@ -8,6 +8,7 @@ import phone from '../../assets/icons/phone.png'
 import location from '../../assets/icons/location2.png'
 import email from '../../assets/icons/email.png'
 import FadeIn from "../../animation/FadeIn";
+
 const JobDetails = () => {
     const jobs = useLoaderData()
     const { id } = useParams()
@@ -17,7 +18,9 @@ const JobDetails = () => {
     console.log(id, jobs)
     const handleApplyJob = () => {
         saveJobApplication(idInt)
-        toast("Wow so easy!");
+
+        toast("Application Submitted")
+
     }
     return (
         <div className="max-w-6xl mx-auto ">
@@ -25,15 +28,16 @@ const JobDetails = () => {
                 <div className="grid md:grid-cols-4 gap-4 my-12 ">
 
                     <div className="border rounded-md md:col-span-3 p-10 leading-relaxed ">
-                        <p className="mb-3"><span className="font-medium">Job Description: </span> {job.job_description}</p>
-                        <p className="mb-3"><span className="font-medium">Job Responsibility: </span> {job.job_responsibility
+                        <p className="mb-3"><span className="font-bold me-1">Company Name: </span> {job.company_name}</p>
+                        <p className="mb-3"><span className="font-bold me-1">Job Description: </span> {job.job_description}</p>
+                        <p className="mb-3"><span className="font-bold me-1">Job Responsibility: </span> {job.job_responsibility
                         }</p>
                         <div className="mb-3">
-                            <p className="font-medium">Education Requirements:</p>
+                            <p className="font-bold me-1">Education Requirements:</p>
                             <p>{job.educational_requirements}</p>
                         </div>
                         <div className="mb-3">
-                            <p className="font-medium">Experience:</p>
+                            <p className="font-bold me-1">Experience:</p>
                             <p>{job.experiences}</p>
                         </div>
                     </div>

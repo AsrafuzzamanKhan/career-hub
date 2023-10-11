@@ -1,10 +1,9 @@
-
 import PropTypes from 'prop-types';
-
 import { FiMapPin } from 'react-icons/fi';
 import { HiOutlineCurrencyDollar } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import FadeIn from '../../animation/FadeIn';
+
 const Job = ({ job }) => {
     const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job
     return (
